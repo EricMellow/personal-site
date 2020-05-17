@@ -70,7 +70,6 @@
   font-family: Oswald;
 }
 
-
 main::before {
   animation: grain 8s steps(10) infinite;
   /* background-image: url(../img/noise.png); */
@@ -119,13 +118,13 @@ main::before {
 
 a {
   text-decoration: none;
-  color: #3ECBBE;
+  color: #3ecbbe;
   outline: none;
 }
 
 a:hover,
 a:focus {
-  color: #3ECBBE;
+  color: #3ecbbe;
   outline: none;
 }
 
@@ -158,7 +157,7 @@ a:focus {
 
 .frame__demo--current,
 .frame__demo--current:hover {
-  color: #3ECBBE;
+  color: #3ecbbe;
 }
 
 .menu {
@@ -186,8 +185,8 @@ a:focus {
   display: inline-block;
   cursor: pointer;
   position: relative;
-  -webkit-text-stroke: 1.5px #3ECBBE;
-  text-stroke: 1.5px #3ECBBE;
+  -webkit-text-stroke: 1.5px #3ecbbe;
+  text-stroke: 1.5px #3ecbbe;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   color: transparent;
@@ -261,7 +260,7 @@ a:focus {
 .menu__item-link,
 .marquee span {
   white-space: nowrap;
-  font-size: var(--item-font-size);
+  font-size: 10rem;
   padding: 0 1vw;
   font-weight: 900;
   line-height: 1.15;
@@ -313,6 +312,43 @@ a:focus {
 
   .frame a {
     pointer-events: auto;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  .menu__item-link,
+  .marquee span {
+    font-size: 8rem;
+  }
+
+  .menu__item {
+    margin: 20px 0;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .menu__item-link,
+  .marquee span {
+    font-size: 6rem;
+  }
+
+  .menu__item {
+    margin: 30px 0;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .menu__item-link,
+  .marquee span {
+    font-size: 5rem;
+  }
+
+  .menu {
+    padding: 0;
+  }
+
+  .menu__item {
+    padding: 0 3vw;
   }
 }
 </style>

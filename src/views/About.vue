@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" dark>
     <h2 class="sub-head">About</h2>
     <p class="p-text">
       A front-end developer with a passion for problem-solving; my focus is on
@@ -87,5 +87,26 @@
   line-height: 2.5rem;
   font-size: 1.5rem;
   margin: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .p-text {
+    padding: 10px 10vw 25px 10vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .p-text {
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .p-text {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    padding: 10px 5vw 25px 5vw;
+  }
 }
 </style>

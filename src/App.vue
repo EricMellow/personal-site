@@ -1,7 +1,8 @@
 <template>
-  <v-app>
+  <v-app class="app-fix">
     <v-app-bar app color="primary" dark class="nav-bar" style="position: sticky !important;">
-      <v-toolbar-title>
+      <v-app-bar-nav-icon @click="drawer = true" style="display: none;" class="hamburger"></v-app-bar-nav-icon>
+      <v-toolbar-title class="tb-title">
         <router-link to="/" style="height: 100%;">Eric Jungbluth | Front End Developer</router-link>
       </v-toolbar-title>
 
@@ -19,6 +20,47 @@
         <v-btn class="nav-btn">About</v-btn>
       </router-link>
     </v-app-bar>
+    <v-navigation-drawer v-model="drawer" absolute temporary class="drawer-content">
+      <v-list nav dense>
+        <v-list-item-group>
+          <router-link to="/" style="height: 100%;">
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon class="icons">mdi-home</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="icons">Home</v-list-item-title>
+            </v-list-item>
+          </router-link>
+
+          <router-link to="/resume" style="height: 100%;" v-if="this.$route.path !== '/'">
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon class="icons">mdi-information</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="icons">Résumé</v-list-item-title>
+            </v-list-item>
+          </router-link>
+
+          <router-link to="/contact" style="height: 100%;" v-if="this.$route.path !== '/'">
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon class="icons">mdi-account</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="icons">Contact</v-list-item-title>
+            </v-list-item>
+          </router-link>
+
+          <router-link to="/about" style="height: 100%;" v-if="this.$route.path !== '/'">
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon class="icons">mdi-book-open-variant</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="icons">About</v-list-item-title>
+            </v-list-item>
+          </router-link>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
 
     <router-view></router-view>
   </v-app>
@@ -50,6 +92,10 @@
   color: white;
 }
 
+.app-fix {
+    background: #000 !important;
+}
+
 a.router-link-active {
   color: white;
   text-decoration: none;
@@ -63,6 +109,29 @@ a:link {
 a:visited {
   color: white;
   text-decoration: none;
+}
+
+.drawer-content {
+  background-color: #353535 !important;
+  color: #3ecbbe;
+}
+
+.icons {
+  color: #3ecbbe !important;
+}
+
+@media only screen and (max-width: 680px) {
+  .hamburger {
+    display: block !important;
+  }
+
+  .tb-title {
+    display: none;
+  }
+
+  .nav-btn {
+    display: none;
+  }
 }
 </style>
 
@@ -79,7 +148,8 @@ export default {
   },
 
   data: () => ({
-    route: "hi"
+    route: "hi",
+    drawer: false
   })
 };
 </script>

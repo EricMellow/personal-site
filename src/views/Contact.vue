@@ -201,4 +201,10 @@ a:visited {
   transform: translate3d(0, -105%, 0);
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@media only screen and (max-width: 450px) {
+  .card-dark {
+    width: 95vw;
+  }
+}
 </style>

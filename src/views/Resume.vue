@@ -205,4 +205,10 @@ li::before {
   color: #3ecbbe;
   font-size: 18px;
 }
+
+@media only screen and (max-width: 740px) {
+  .panels-fix {
+    width: 90vw;
+  }
+}
 </style>
